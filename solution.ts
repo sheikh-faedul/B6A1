@@ -16,16 +16,31 @@ function formatValue(value: ValueType): ValueType {
 // ---------
 
 // problem-2
- 
-type typeValue = string|any[];
 
-function getLength(value:typeValue):number{
-  if(typeof value==="string"){
-    return value.length
-  }
- else if(Array.isArray(value)){
-    return value.length
-  }
-  return 0;
+type typeValue = string | any[];
+
+function getLength(value: typeValue): number {
+    if (typeof value === "string") {
+        return value.length
+    }
+    else if (Array.isArray(value)) {
+        return value.length
+    }
+    return 0;
 }
 //  -------------------
+
+// problem 3
+
+class Person {
+    name: string;
+    age: number
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+    getDetails():string{
+        return `Name: ${[this.name]} Age: ${[this.age]}`
+    }
+}
+//   ---------------------------
