@@ -44,3 +44,17 @@ class Person {
     }
 }
 //   ---------------------------
+
+// problem4
+
+interface IbookItems{
+    title:string;
+    rating:number;
+}
+
+function  filterByRating(items:IbookItems[]):IbookItems[]{
+    const filterItem= items.filter(item =>item.rating >=4);
+     return filterItem
+}
+
+ 
