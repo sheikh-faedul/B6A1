@@ -39,7 +39,7 @@ class Person {
         this.name = name;
         this.age = age;
     }
-    getDetails():string{
+    getDetails(): string {
         return `Name: ${[this.name]} Age: ${[this.age]}`
     }
 }
@@ -47,14 +47,29 @@ class Person {
 
 // problem4
 
-interface IbookItems{
-    title:string;
-    rating:number;
+interface IbookItems {
+    title: string;
+    rating: number;
 }
 
-function  filterByRating(items:IbookItems[]):IbookItems[]{
-    const filterItem= items.filter(item =>item.rating >=4);
-     return filterItem
+function filterByRating(items: IbookItems[]): IbookItems[] {
+    const filterItem = items.filter(item => item.rating >= 4);
+    return filterItem
 }
 
- 
+//  -----------------
+
+// problem 5
+
+type User = {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+}
+
+function  filterActiveUsers(users:User[]):User[]{
+  const activeUser = users.filter(user=>user.isActive);
+  return activeUser;
+}
+//   --------------------
