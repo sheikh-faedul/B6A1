@@ -16,3 +16,16 @@ function formatValue(value: ValueType): ValueType {
 // ---------
 
 // problem-2
+ 
+type typeValue = string|any[];
+
+function getLength(value:typeValue):number{
+  if(typeof value==="string"){
+    return value.length
+  }
+ else if(Array.isArray(value)){
+    return value.length
+  }
+  return 0;
+}
+//  -------------------
