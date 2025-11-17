@@ -88,3 +88,65 @@ function printBookDetails(book: Book) {
         `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`
     );
 }
+
+// --------------------------
+// problem 7
+
+function getUniqueValues<T>(arr1: T[], arr2: T[]): T[] {
+    const result: T[] = [];
+    function exists(value: T, array: T[]): boolean {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    for (let i = 0; i < arr1.length; i++) {
+        if (!exists(arr1[i], result)) {
+            result.push(arr1[i]);
+        }
+    }
+
+    for (let i = 0; i < arr2.length; i++) {
+        if (!exists(arr2[i], result)) {
+            result.push(arr2[i]);
+        }
+    }
+
+    return result;
+}
+
+// ----------------
+// problem 8
+
+ interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number; 
+}
+
+ 
+function calculateTotalPrice(products: Product[]): number {
+   const finalPrices = products.map((product) => {
+     const basePrice = product.price * product.quantity;
+    const discountPercent = product.discount ?? 0;
+
+    if (discountPercent > 0 && discountPercent <= 100) {
+       const discountMultiplier = 1 - (discountPercent / 100);
+      return basePrice * discountMultiplier;
+    }
+    return basePrice;
+  });
+
+   const total = finalPrices.reduce((sum, currentPrice) => {
+    return sum + currentPrice;
+  }, 0); 
+
+  return total;
+}
+
+
+
