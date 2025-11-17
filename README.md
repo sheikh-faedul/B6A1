@@ -1,29 +1,32 @@
- Answer No : 3
- any,unknown & never
+ 
+ Answer No:3
+ 
+ any type
 
- any type 
+any টাইপ ব্যবহার করলে, সেই ভেরিয়েবলে যেকোনো টাইপের ভ্যালু অ্যাসাইন করা যায়। সেটা  string,number বা  boolean হতে পারে। এই ক্ষেত্রে, TypeScript কোনো টাইপ-চেকিং করে না এবং কোনো এরর (error) দেখায় না।
 
- any type use korle sei jaygay jekono type er value asing kora jabe seta hote pare string,number or boolen, ai khetre typeScript kono error dibe na ,
+unknown type
 
- unknown type 
+unknown টাইপও any-এর মতোই যেকোনো ভ্যালু গ্রহণ করতে পারে, তবে এটি any থেকে বেশি নিরাপদ। কারণ, unknown টাইপের ভেরিয়েবল সরাসরি ব্যবহার করার আগে, আপনাকে অবশ্যই condition বা টাইপ-চেকিং যেমন typeof এর মাধ্যমে নিশ্চিত হতে হবে যে সেটি কী টাইপের ভ্যালু। যেমন: condition এ এটি string বা অন্য কোনো  type কি না, এবং সেই অনুযায়ী কী কাজ করা হবে তা ঠিক করে দিতে হয়।
 
- unknown type any er motoi kaj kore tobe aita safe e khatre type k condition e type check kore dite hoy ba define kore dite hoy jemon ,
- condition er modde string ba onno type kina ta hole ki hobe ai rokom .
+never type
 
- never type 
-
- never type mane hocce kokhonoi na ,jemnon kono function jdi kiso return na kore sure howa jay tobe sei khetre never type use kora jete pare.
+never টাইপের মানে হচ্ছে 'কখনোই না'। এই টাইপটি এমন ফাংশনে ব্যবহৃত হয় যা থেকে নিশ্চিতভাবে কোনো কিছুই return আসে না। যেমন, একটি ফাংশন যদি সব সময় একটি  error throw করে অথবা একটি  infinite loop মধ্যে চলে, তবে তার রিটার্ন টাইপ never হতে পারে।
 
  Answer No :5
- union|
- intersection&
 
-Union:
- Union muluto dota type ba akadik typer khetre use kora hoy.
-  jemon kono perameter er value string o hote pare abr number o hote pare ai khetre union use kora hoy onk ta condition er OR er moto je kono akta holei ta asing korte dibe amon.
-"|" airokom chinno use korte hoy union er khetre.
+ Union :
 
-intersection:
-intersection hocce doita sortai puron korte hobe amon condition er moto . akhetre akdik o hote pare
-ai sorte puron hotei ta asing korte dibe na hole na.
-"&" ai chinno bebohar korte hoy intersection er khetre."&" ai chinno aktai use korte hoy condition er moto doi ta na.
+Union মূলত দুই বা ততোধিক টাইপের ক্ষেত্রে ব্যবহার করা হয়।
+
+যেমন, কোনো   parameter value "string" আবার "number" - দুটোই হতে পারে। এই ক্ষেত্রে ইউনিয়ন ব্যবহার করা হয়। এটি অনেকটা কন্ডিশনের OR   এর মতো কাজ করে; অর্থাৎ,যেকোনো একটি টাইপ মিললেই তা  assign করতে দেয়।
+
+ইউনিয়ন বোঝানোর জন্য ' | '  চিহ্ন ব্যবহার করতে হয়।
+
+Intersection :
+
+  Intersection হচ্ছে এমন একটি অবস্থা যেখানে দুটি বা ততোধিক টাইপের সবগুলো শর্তই পূরণ করতে হবে; এটি কন্ডিশনের AND   এর মতো।
+
+এই ক্ষেত্রে, সবগুলো টাইপের বৈশিষ্ট্য পূরণ হলেই কেবল ভ্যালুটি অ্যাসাইন করা যাবে, না হলে condition পূরণ করবে না 
+
+ইন্টারসেকশন বোঝানোর জন্য '&'   চিহ্ন ব্যবহার করা হয়।  condition মতো && দুইটি নয়, শুধু একটি & চিহ্ন দিতে হয়।

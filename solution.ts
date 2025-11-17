@@ -147,5 +147,5 @@ function calculateTotalPrice(products: Product[]): number {
   return total;
 }
 
-
+ 
 
