@@ -68,8 +68,23 @@ type User = {
     isActive: boolean;
 }
 
-function  filterActiveUsers(users:User[]):User[]{
-  const activeUser = users.filter(user=>user.isActive);
-  return activeUser;
+function filterActiveUsers(users: User[]): User[] {
+    const activeUser = users.filter(user => user.isActive);
+    return activeUser;
 }
 //   --------------------
+// problem 6
+
+interface Book {
+    title: string;
+    author: string;
+    publishedYear: number;
+    isAvailable: boolean;
+}
+
+function printBookDetails(book: Book) {
+    const availability = book.isAvailable ? "Yes" : "No";
+    console.log(
+        `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`
+    );
+}
