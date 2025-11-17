@@ -128,7 +128,6 @@ function getUniqueValues<T>(arr1: T[], arr2: T[]): T[] {
   discount?: number; 
 }
 
- 
 function calculateTotalPrice(products: Product[]): number {
    const finalPrices = products.map((product) => {
      const basePrice = product.price * product.quantity;
